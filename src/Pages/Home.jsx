@@ -1,7 +1,7 @@
-import Contact from "../sections/Contact";
+// import Contact from "../sections/Contact";
+// import Projects from "./../Sections/Projects";
 import Hero from "../Sections/Hero";
 import About from "./../Sections/About";
-import Projects from "./../Sections/Projects";
 import Services from "./../Sections/Services";
 // AOS Animation
 import AOS from "aos";
