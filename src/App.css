@@ -53,16 +53,16 @@
 
 /* services */
 .building-construction {
-  background-image: url("src/assets/servicesSec/Building-Construction.webp");
+  background-image: url("./assets/servicesSec/Building-Construction.webp");
 }
 .engineering-design {
-  background-image: url("src/assets/servicesSec/Engineering-Design.webp");
+  background-image: url("./assets/servicesSec/Engineering-Design.webp");
 }
 .maintenance-works {
-  background-image: url("src/assets/servicesSec/Maintenance-Works.webp");
+  background-image: url("./assets/servicesSec/Maintenance-Works.webp");
 }
 .project-management {
-  background-image: url("src/assets/servicesSec/Project-Management.webp");
+  background-image: url("./assets/servicesSec/Project-Management.webp");
 }
 
 /* Carousel */
