@@ -17,28 +17,28 @@ const services = [
     title: "Building Construction",
     description:
       "We construct residential, commercial, and industrial facilities according to the highest quality standards",
-    bgImg: `url('src/assets/servicesSec/Building-Construction.webp')`,
+    bgImg: `building-construction`,
   },
   {
     icon: <FaDraftingCompass />,
     title: "Engineering Design",
     description:
       "Designing all construction projects and supervising their technical execution",
-    bgImg: `url('src/assets/servicesSec/Engineering-Design.webp')`,
+    bgImg: `engineering-design`,
   },
   {
     icon: <FaTools />,
     title: "Maintenance Works",
     description:
       "Providing regular maintenance services for the company’s and clients’ buildings",
-    bgImg: `url('src/assets/servicesSec/Maintenance-Works.webp')`,
+    bgImg: `maintenance-works`,
   },
   {
     icon: <FaHardHat />,
     title: "Project Management",
     description:
       "Planning and executing all construction projects, from feasibility studies to final delivery",
-    bgImg: `url('src/assets/servicesSec/Project-Management.webp')`,
+    bgImg: `project-management`,
   },
 ];
 
@@ -59,12 +59,7 @@ const Services = () => {
             <div
               key={i}
               // data-aos= 'fade-up'
-              style={{
-                backgroundImage: service.bgImg,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              className={` overflow-hidden rounded-2xl `}
+              className={` overflow-hidden rounded-2xl ${service.bgImg} bg-cover bg-center `}
             >
               <ServiceCard
                 icon={service.icon}

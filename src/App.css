@@ -51,6 +51,20 @@
   background-attachment: fixed;
 }
 
+/* services */
+.building-construction {
+  background-image: url("src/assets/servicesSec/Building-Construction.webp");
+}
+.engineering-design {
+  background-image: url("src/assets/servicesSec/Engineering-Design.webp");
+}
+.maintenance-works {
+  background-image: url("src/assets/servicesSec/Maintenance-Works.webp");
+}
+.project-management {
+  background-image: url("src/assets/servicesSec/Project-Management.webp");
+}
+
 /* Carousel */
 
 .slick-dots li.slick-active button:before,
@@ -61,7 +75,6 @@
   font-size: 20px;
 }
 
-
-button{
+button {
   cursor: pointer;
 }
