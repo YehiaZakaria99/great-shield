@@ -1,16 +1,20 @@
 import AboutCard from "../Components/AboutCard/AboutCard";
 
 // Images
-import ourVision from "../assets/aboutSec/Our-Vision.webp";
-import ourMessage from "../assets/aboutSec/Our-Message.webp";
-import ourMissoin from "../assets/aboutSec/Our-Mission.webp";
-import ourStandards from "../assets/aboutSec/Our-Standards.webp";
+import ourVision from "/aboutSec/Our-Vision.webp";
+import ourMessage from "/aboutSec/Our-Message.webp";
+import ourMissoin from "/aboutSec/Our-Mission.webp";
+import ourStandards from "/aboutSec/Our-Standards.webp";
 
 // Data
 const about = [
   { title: "Our Vision", img: ourVision, link: "/about#vision-details" },
   { title: "Our Mission", img: ourMissoin, link: "/about#mission-details" },
-  { title: "Our Standards", img: ourStandards, link: "/about#standards-details" },
+  {
+    title: "Our Standards",
+    img: ourStandards,
+    link: "/about#standards-details",
+  },
   { title: "Our Message", img: ourMessage, link: "/about#message-details" },
 ];
 
@@ -26,14 +30,16 @@ const About = () => {
           industrial facilities.
         </p>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 my-5 text-center">
+        <div className="flex gap-y-5 my-5 justify-center flex-wrap text-center">
           {about.map(({ title, img, link }, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl"
+              className="overflow-hidden rounded-2xl w-full md:w-1/2 lg:w-1/4"
               data-aos="flip-up"
             >
-              <AboutCard title={title} img={img} link={link} />
+              <div className="px-3 h-full">
+                <AboutCard title={title} img={img} link={link} />
+              </div>
             </div>
           ))}
         </div>

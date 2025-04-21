@@ -6,16 +6,9 @@
   /* --main-hover-color: #f6c3a9; */
 }
 
-/* navbar */
-.logo {
-  width: 10rem;
-}
-
 .active {
   color: var(--main-color);
 }
-
-/* Sections */
 
 /* Gradiant Text */
 .text-bg,
@@ -38,31 +31,6 @@
   z-index: 2;
   font-weight: 700;
   display: inline-block;
-}
-
-/* hero sec */
-
-.hero-sec {
-  padding: 100px 0;
-  background-image: url(./assets/hero/bg-hero.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  /* background-attachment: fixed; */
-}
-
-/* services */
-.building-construction {
-  background-image: url("./assets/servicesSec/Building-Construction.webp");
-}
-.engineering-design {
-  background-image: url("./assets/servicesSec/Engineering-Design.webp");
-}
-.maintenance-works {
-  background-image: url("./assets/servicesSec/Maintenance-Works.webp");
-}
-.project-management {
-  background-image: url("./assets/servicesSec/Project-Management.webp");
 }
 
 /* Carousel */

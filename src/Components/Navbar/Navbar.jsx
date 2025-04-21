@@ -1,4 +1,4 @@
-import logo from "../../assets/navbar/logo.svg";
+import logo from "/navbar/logo.svg";
 import { useEffect, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center p-1">
         {/* Logo */}
         <div className="font-bold">
-          <img className="logo" src={logo} alt="logo" />
+          <img className="w-40" src={logo} alt="logo" />
         </div>
 
         {/* Desktop Links */}

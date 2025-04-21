@@ -25,13 +25,16 @@ export default function ServicesPageCard({ service }) {
           {service.subSections.map((section, i) => (
             <div key={i} className="px-4">
               <div className="flex flex-col md:flex-row items-stretch gap-6 bg-[--nav-bg] border border-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 min-h-[320px] overflow-hidden">
-                
                 {/* BG Image */}
-                <div
-                  className="w-full md:w-1/3 bg-cover bg-center min-h-[200px] md:min-h-[320px]"
-                  style={{ backgroundImage: section.bgImg }}
-                >
-                  <div className="w-full h-full bg-black/40  rounded-l-2xl"></div>
+                <div className="w-full md:w-1/3 min-h-[200px] md:min-h-[320px]">
+                  <div className="w-full h-full bg-black/40  rounded-l-2xl">
+                    <img
+                      className="h-full object-cover"
+                      src={section.img}
+                      alt={section.subTitle}
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
 
                 {/* Text */}

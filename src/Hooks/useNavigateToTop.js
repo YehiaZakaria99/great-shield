@@ -1,14 +1,14 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// const useNavigateToTop = () => {
-//   const navigate = useNavigate();
+const useNavigateToTop = () => {
+    
+  const navigate = useNavigate();
+  const go = (to) => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+    navigate(to);
+  };
 
-//   const go = (to) => {
-//     window.scrollTo({ top: 0, behavior: "auto" });
-//     navigate(to);
-//   };
+  return go;
+};
 
-//   return go;
-// };
-
-// export default useNavigateToTop;
+export default useNavigateToTop;

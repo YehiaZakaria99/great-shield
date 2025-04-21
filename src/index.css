@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
@@ -10,7 +8,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 @layer utilities {
   .animate-fade-in {
@@ -27,8 +24,26 @@ html {
       transform: scale(1);
     }
   }
+  /* Animate bounceX */
+  @theme {
+    --animate-bounceX: bounceX 1s ease-in-out infinite;
+    @keyframes bounceX {
+      0%{
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(10%);
+        /* transform: none; */
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+      100% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+    }
+  }
 
-/* hide scrollbar */
+  /* hide scrollbar */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -36,4 +51,25 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+
+
+
+
+
+/* Custom Scrollbar Style */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #94a3b8; /* slate-400 */
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
 }

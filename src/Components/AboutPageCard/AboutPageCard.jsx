@@ -56,6 +56,7 @@ export default function AboutPageCard({
     <div
       data-aos={aos}
       className="mb-24 flex flex-col gap-8 items-center text-white"
+      id={id}
     >
       {/* المحتوى العادي */}
       <div className="flex flex-col md:flex-row items-center gap-8 w-full">
@@ -74,11 +75,10 @@ export default function AboutPageCard({
           {moreContent && (
             <button
               onClick={openModal}
-              className="cursor-pointer group mt-6 text-sm text-orange-400 hover:underline inline-flex items-center gap-1"
-              id={id}
+              className="mt-6 gap-2 inline-flex items-center group outline-none px-3 py-2 text-sm font-medium border-2 border-(--main-color)  text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition-all duration-300 rounded-lg"
             >
               View More
-              <FaArrowRight className="transition-transform group-hover:translate-x-1 duration-300" />
+              <FaArrowRight className="transition-all group-hover:animate-bounceX duration-75" />
             </button>
           )}
         </div>

@@ -1,25 +1,67 @@
 // Animation
 import { useEffect, useState } from "react";
 import ServicesPageCard from "../Components/ServicesPageCard/ServicesPageCard";
+import Loading from "./../Components/Loading/Loading";
+
+// General Construction Services
+import residentialBuilding from "/servicesPage/General-Construction-Services/residentialBuilding.webp";
+import commercialBuilding from "/servicesPage/General-Construction-Services/commercialBuilding.webp";
+import industrialBuilding from "/servicesPage/General-Construction-Services/industrialBuilding.webp";
+import finishing from "/servicesPage/General-Construction-Services/finishing.webp";
+import infrastructureWorks from "/servicesPage/General-Construction-Services/infrastructureWorks.webp";
+
+// Specialized Services
+import electricalInstallations from "/servicesPage/Specialized-Services/electricalInstallations.webp";
+import mechanicalInstallations from "/servicesPage/Specialized-Services/mechanicalInstallations.webp";
+import decorationWorks from "/servicesPage/Specialized-Services/decorationWorks.webp";
+import sitePreparation from "/servicesPage/Specialized-Services/sitePreparation.webp";
+import landscapingWorks from "/servicesPage/Specialized-Services/landscapingWorks.webp";
+
+// More Services
+import projectManagement from "/servicesPage/More Services/projectManagement.webp";
+import engineeringDesign from "/servicesPage/More Services/engineeringDesign.webp";
+import procurement from "/servicesPage/More Services/procurement.webp";
+import maintenance from "/servicesPage/More Services/maintenance.webp";
 
 export default function ServicesPage() {
+  const [isLoading, setIsLodaing] = useState(true);
+
+  useEffect(() => {
+    let x = 1;
+    const interval = setInterval(() => {
+      if (x < 2) {
+        setIsLodaing(true);
+        x = x + 1;
+      } else {
+        setIsLodaing(false);
+      }
+    }, 100);
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   const services = [
     {
       title: "General Construction Services",
       subSections: [
         {
           subTitle: "Residential Building Construction",
-          bgImg: `url('./src/assets/servicesPage/General-Construction-Services/residential-building-construction.webp')`,
+          img: residentialBuilding,
           descriptions: ["Apartments", "Villas", "Multi-family Houses"],
         },
         {
           subTitle: "Commercial Building Construction",
-          bgImg: `url('./src/assets/servicesPage/General-Construction-Services/commercial-building-construction.webp')`,
+          img: commercialBuilding,
           descriptions: ["Shopping Centers", "Hotels", "Offices"],
         },
         {
           subTitle: "Industrial Building Construction",
-          bgImg: `url('./src/assets/servicesPage/General-Construction-Services/industrial-building-construction.webp')`,
+          img: industrialBuilding,
           descriptions: [
             "Factories",
             "Processing Plants",
@@ -29,14 +71,14 @@ export default function ServicesPage() {
         },
         {
           subTitle: "Interior and Exterior Finishing",
-          bgImg: `url('./src/assets/servicesPage/General-Construction-Services/interior-and-exterior-finishing.webp')`,
+          img: finishing,
           descriptions: [
             "Includes all finishing works, from flooring, walls, and ceilings to painting, gypsum, and tiling",
           ],
         },
         {
           subTitle: "Infrastructure Works",
-          bgImg: `url('./src/assets/servicesPage/General-Construction-Services/infrastructure-works.webp')`,
+          img: infrastructureWorks,
           descriptions: [
             "Sewage Networks",
             "Water Supply",
@@ -51,12 +93,12 @@ export default function ServicesPage() {
       subSections: [
         {
           subTitle: "Electrical Installations",
-          bgImg: `url('src/assets/servicesSec/electrical.webp')`,
+          img: electricalInstallations,
           descriptions: ["Control Panels", "Wiring", "Sockets"],
         },
         {
           subTitle: "Mechanical Installations",
-          bgImg: `url('src/assets/servicesSec/mechanical.webp')`,
+          img: mechanicalInstallations,
           descriptions: [
             "Heating Systems",
             "Ventilation",
@@ -67,7 +109,7 @@ export default function ServicesPage() {
         },
         {
           subTitle: "Interior Decoration Works",
-          bgImg: `url('src/assets/servicesSec/interior-decoration.webp')`,
+          img: decorationWorks,
           descriptions: [
             "Comprehensive interior finishes, including flooring",
             "Walls",
@@ -77,12 +119,16 @@ export default function ServicesPage() {
         },
         {
           subTitle: "Landscaping Works",
-          bgImg: `url('src/assets/servicesSec/landscaping.webp')`,
-          descriptions: ["Garden Design and Construction", "Playgrounds", "Fountains"],
+          img: sitePreparation,
+          descriptions: [
+            "Garden Design and Construction",
+            "Playgrounds",
+            "Fountains",
+          ],
         },
         {
           subTitle: "Site Preparation and Demolition",
-          bgImg: `url('src/assets/servicesSec/site-prep.webp')`,
+          img: landscapingWorks,
           descriptions: [
             "Site Preparation for Construction",
             "Demolition of Old Buildings",
@@ -95,28 +141,28 @@ export default function ServicesPage() {
       subSections: [
         {
           subTitle: "Project Management",
-          bgImg: `url('src/assets/servicesSec/project-management.webp')`,
+          img: projectManagement,
           descriptions: [
             "Planning and executing all construction projects, starting from the feasibility study phase to final delivery",
           ],
         },
         {
           subTitle: "Engineering Design",
-          bgImg: `url('src/assets/servicesSec/engineering-design.webp')`,
+          img: engineeringDesign,
           descriptions: [
             "Designing all construction projects and supervising their execution from a technical perspective",
           ],
         },
         {
           subTitle: "Procurement",
-          bgImg: `url('src/assets/servicesSec/procurement.webp')`,
+          img: procurement,
           descriptions: [
             "Purchasing all necessary materials and equipment required for the execution of construction projects",
           ],
         },
         {
           subTitle: "Maintenance",
-          bgImg: `url('src/assets/servicesSec/maintenance.webp')`,
+          img: maintenance,
           descriptions: [
             "Providing regular maintenance services for the company’s buildings and its clients",
           ],
@@ -124,19 +170,24 @@ export default function ServicesPage() {
       ],
     },
   ];
-  
 
   return (
-    <section className="pt-40 pb-16 bg-[#111] text-white min-h-screen overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-(--main-color) mb-16">
-          Services
-        </h2>
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <section className="pt-40 pb-16 bg-[#111] text-white min-h-screen overflow-hidden">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-(--main-color) mb-16">
+              Services
+            </h2>
 
-        {services.map((service, index) => (
-          <ServicesPageCard service={service} key={index} />
-        ))}
-      </div>
-    </section>
+            {services.map((service, index) => (
+              <ServicesPageCard service={service} key={index} />
+            ))}
+          </div>
+        </section>
+      )}
+    </>
   );
 }
