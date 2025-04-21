@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 
 export default function AboutPageCard({
@@ -16,7 +16,6 @@ export default function AboutPageCard({
 
   const openModal = () => {
     setIsModalOpen(true);
-    // delay to add class after render
     setTimeout(() => setShowModalClass(true), 10);
   };
 
@@ -29,26 +28,29 @@ export default function AboutPageCard({
     }, 300);
   };
 
-  const handleClickOutside = (e) => {
+  const handleClickOutside = useCallback((e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
       closeModal();
     }
-  };
+  }, []);
+
+  const handleEscape = useCallback((e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  }, []);
 
   useEffect(() => {
     if (isModalOpen) {
       document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
-      });
+      document.addEventListener("keydown", handleEscape);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
-      });
+      document.removeEventListener("keydown", handleEscape);
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, handleClickOutside, handleEscape]);
 
   return (
     <div
@@ -84,13 +86,12 @@ export default function AboutPageCard({
 
       {/* المودال */}
       {isModalOpen && (
-        <div className="fixed inset-0  bg-opacity-60 backdrop-blur-sm z-50 flex justify-center items-center px-4">
+        <div className="fixed inset-0 bg-opacity-60 backdrop-blur-sm z-50 flex justify-center items-center px-4">
           <div
             ref={modalRef}
-            className={`bg-[#222] w-full max-w-3xl rounded-xl p-6 relative transition-all duration-300 transform
-              ${
-                showModalClass ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
+            className={`bg-[#222] w-full max-w-3xl rounded-xl p-6 relative transition-all duration-300 transform ${
+              showModalClass ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
           >
             {/* زر الإغلاق */}
             <button

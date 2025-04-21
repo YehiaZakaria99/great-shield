@@ -4,18 +4,18 @@ import Hero from "../Sections/Hero";
 import About from "./../Sections/About";
 import Services from "./../Sections/Services";
 // AOS Animation
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const Home = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 800,
+  //     once: true,
+  //     easing: "ease-in-out",
+  //   });
+  // }, []);
   return (
     <>
       <Hero />

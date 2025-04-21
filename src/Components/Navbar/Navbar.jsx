@@ -1,5 +1,5 @@
 import logo from "../../assets/navbar/logo.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -7,17 +7,17 @@ const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleScroll = useCallback(() => {
+    setScrolling(window.scrollY > 50);
+  }, []);
+
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
 
-  const handleScroll = () => {
-    setScrolling(window.scrollY > 50);
-  };
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -34,42 +34,25 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <nav className="hidden md:flex space-x-6 text-lg text-white">
-          <NavLink
-            to="/"
-            className="hover:text-(--main-hover-color) transition"
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="hover:text-(--main-hover-color) transition"
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/services"
-            className="hover:text-(--main-hover-color) transition"
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className="hover:text-(--main-hover-color) transition"
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className="hover:text-(--main-hover-color) transition"
-          >
-            Contact Us
-          </NavLink>
+          {["/", "/about", "/services", "/projects", "/contact"].map((path, idx) => {
+            const labels = ["Home", "About", "Services", "Projects", "Contact Us"];
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                className="hover:text-(--main-hover-color) transition"
+              >
+                {labels[idx]}
+              </NavLink>
+            );
+          })}
         </nav>
 
         {/* Mobile Toggle */}
         <button
           className="md:hidden text-(--main-color) cursor-pointer"
           onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
           {isOpen ? <X size={40} /> : <Menu size={40} />}
         </button>
@@ -81,50 +64,22 @@ const Navbar = () => {
           isOpen ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <NavLink
-          to="/"
-          onClick={() => closeMenu()}
-          className="block py-2 hover:text-(--main-hover-color) transition"
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          onClick={() => closeMenu()}
-          className="block py-2 hover:text-(--main-hover-color) transition"
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/services"
-          onClick={() => closeMenu()}
-          className="block py-2 hover:text-(--main-hover-color) transition"
-        >
-          Services
-        </NavLink>
-        <NavLink
-          to="/projects"
-          onClick={() => closeMenu()}
-          className="block py-2 hover:text-(--main-hover-color) transition"
-        >
-          Projects
-        </NavLink>
-        <NavLink
-          to="/contact"
-          onClick={() => closeMenu()}
-          className="block py-2 hover:text-(--main-hover-color) transition"
-        >
-          Contact Us
-        </NavLink>
+        {["/", "/about", "/services", "/projects", "/contact"].map((path, idx) => {
+          const labels = ["Home", "About", "Services", "Projects", "Contact Us"];
+          return (
+            <NavLink
+              key={path}
+              to={path}
+              onClick={closeMenu}
+              className="block py-2 hover:text-(--main-hover-color) transition"
+            >
+              {labels[idx]}
+            </NavLink>
+          );
+        })}
       </div>
     </header>
   );
 };
 
 export default Navbar;
-
-/* 
-
-
-
-*/

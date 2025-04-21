@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 import ServicesPageCard from "../Components/ServicesPageCard/ServicesPageCard";
 
 export default function ServicesPage() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
   const services = [
     {
       title: "General Construction Services",
