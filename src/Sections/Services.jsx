@@ -42,48 +42,44 @@ const Services = () => {
       id="services"
       className="py-10 bg-gradient-to-b bg-(--nav-bg) overflow-auto"
     >
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2
-          className="text-4xl font-bold mb-12 text-white text-bg"
-          data-aos="fade-up"
-        >
-          Our Serviecs
-        </h2>
-
-        <div className="flex gap-y-5 my-5 justify-center flex-wrap">
-          {services.map(({ title, description, img }, index) => (
-            <div
-              key={index}
-              className={`overflow-hidden rounded-2xl w-full md:w-1/2 lg:w-1/4`}
-            >
-              <div className="px-3 h-full">
-                <ServiceCard title={title} img={img} />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="flex justify-center my-10  py-5">
-        <button
-          onClick={() => goTo("/services")}
-          className="inline-flex items-center group outline-none px-4 py-2 text-sm font-medium border-2 border-(--main-color)  text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition-all duration-300 rounded-lg"
-        >
-          More Details
-          <svg
-            className="w-4 h-4 ms-2 rtl:rotate-180 group-hover:animate-bounceX duration-300"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
+      <div className="container">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2
+            className="text-4xl font-bold mb-12 text-white text-bg"
+            data-aos="fade-up"
           >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </button>
+            Our Serviecs
+          </h2>
+
+          {/* <div className="grid-special grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 px-2"> */}
+          <div className="flex flex-wrap justify-center md:gap-4 gap-5 my-5 ">
+            {services.map(({ title, description, img }, index) => (
+              <ServiceCard key={index} title={title} img={img} />
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center my-10  py-5">
+          <button
+            onClick={() => goTo("/services")}
+            className="inline-flex items-center group outline-none px-4 py-2 text-sm font-medium border-2 border-(--main-color)  text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition-all duration-300 rounded-lg"
+          >
+            More Details
+            <svg
+              className="w-4 h-4 ms-2 rtl:rotate-180 group-hover:animate-bounceX duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   );

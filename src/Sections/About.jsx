@@ -34,7 +34,7 @@ const About = () => {
           {about.map(({ title, img, link }, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl w-full md:w-1/2 lg:w-1/4"
+              className=" rounded-2xl w-full md:w-1/2 lg:w-1/4"
               data-aos="flip-up"
             >
               <div className="px-3 h-full">

@@ -20,6 +20,7 @@ const NotFound = lazy(() => import("./Pages/NotFound"));
 
 import Footer from "./Components/Footer/Footer";
 import Loading from "./Components/Loading/Loading";
+import ProjectsPage from "./Pages/ProjectsPage";
 
 function App() {
   return (
@@ -59,6 +60,15 @@ function App() {
             <Suspense fallback={<Loading />}>
               {" "}
               <ServicesPage />{" "}
+            </Suspense>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <Suspense fallback={<Loading />}>
+              {" "}
+              <ProjectsPage />{" "}
             </Suspense>
           }
         />

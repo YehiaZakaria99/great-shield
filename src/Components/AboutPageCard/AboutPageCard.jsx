@@ -20,10 +20,10 @@ export default function AboutPageCard({
 
   const closeModal = () => {
     setShowModalClass(false);
-    setIsClosing(true);
+    // setIsClosing(true);
     setTimeout(() => {
       setIsModalOpen(false);
-      setIsClosing(false);
+      // setIsClosing(false);
     }, 300);
   };
 
@@ -83,16 +83,18 @@ export default function AboutPageCard({
         </div>
       </div>
 
-      {/* المودال */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-opacity-60 backdrop-blur-sm z-50 flex justify-center items-center px-4">
+        <div
+          className={`fixed inset-0 z-50 bg-[rgba(0_0_0_.15)] backdrop-blur-sm flex items-center justify-center px-4 py-2 md:py-6 overflow-y-auto transition-all duration-300 ${
+            showModalClass ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <div
             ref={modalRef}
-            className={`bg-[#222] w-full max-w-3xl rounded-xl p-6 relative transition-all duration-300 transform ${
-              showModalClass ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
+            className={`bg-[#222] w-full max-w-5xl rounded-2xl p-4 sm:p-6 md:p-10 shadow-2xl transform transition-all duration-300 ${
+              showModalClass ? "scale-100 opacity-100" : "scale-95 opacity-0"
+            } max-h-[90vh] overflow-y-auto`}
           >
-            {/* زر الإغلاق */}
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition"
               onClick={closeModal}
@@ -100,7 +102,6 @@ export default function AboutPageCard({
               <FaTimes size={20} />
             </button>
 
-            {/* المحتوى */}
             <h4 className="text-2xl font-bold text-orange-400 mb-6">{title}</h4>
             <div>{moreContent}</div>
           </div>
@@ -109,3 +110,31 @@ export default function AboutPageCard({
     </div>
   );
 }
+
+/* 
+
+
+    
+
+*/
+
+/* 
+
+{isModalOpen && (
+  <div
+    className={`fixed inset-0 z-50 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center px-4 py-2 md:py-6 overflow-y-auto transition-all duration-300 ${
+      showModalClass ? "opacity-100" : "opacity-0"
+    }`}
+  >
+    <div
+      ref={modalRef}
+      className={`bg-[#222] w-full max-w-5xl rounded-2xl p-4 sm:p-6 md:p-10 shadow-2xl transform transition-all duration-300 ${
+        showModalClass ? "scale-100 opacity-100" : "scale-95 opacity-0"
+      }`}
+    >
+      { المحتوى هنا }
+      </div>
+      </div>
+    )}
+    
+*/

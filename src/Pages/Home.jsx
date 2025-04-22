@@ -1,6 +1,7 @@
 // import Contact from "../sections/Contact";
 // import Projects from "./../Sections/Projects";
 import Hero from "../Sections/Hero";
+import Projects from "../Sections/Projects";
 import About from "./../Sections/About";
 import Services from "./../Sections/Services";
 // AOS Animation
@@ -21,7 +22,7 @@ const Home = () => {
       <Hero />
       <Services />
       <About />
-      {/* <Projects /> */}
+      <Projects />
       {/* <Contact /> */}
     </>
   );

@@ -46,3 +46,19 @@
 button {
   cursor: pointer;
 }
+
+
+.width-special {
+  @media (width <= 31.25rem ) {
+      width: 160px; 
+  }
+}
+
+.container {
+  @media (width <= 576px ) {
+      width: 100%; 
+  }
+}
+
+
+

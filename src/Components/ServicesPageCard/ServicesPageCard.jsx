@@ -10,7 +10,7 @@ export default function ServicesPageCard({ service }) {
     autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     pauseOnHover: true,
   };
 
