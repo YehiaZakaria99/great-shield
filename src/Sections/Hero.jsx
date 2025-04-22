@@ -8,7 +8,7 @@ export default function Hero() {
   // const goTo = useNavigate();
   return (
     <section
-      className="h-screen hero-sec bg-cover bg-top bg-no-repeat bg-fixed p-[100px_0] relative overflow-x-hidden"
+      className="h-screen hero-sec bg-cover bg-left md:bg-top bg-no-repeat bg-fixed p-[100px_0] relative overflow-x-hidden"
       style={{ backgroundImage: "url(/hero/bgHero.webp)" }}
     >
       <div className="absolute inset-0 bg-(--nav-bg)/75 flex flex-col justify-center items-center text-white text-center p-4">
