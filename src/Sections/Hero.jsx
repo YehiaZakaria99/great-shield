@@ -1,20 +1,30 @@
 // import useNavigateToTop from "../Hooks/useNavigateToTop";
+import { FaArrowAltCircleDown } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
 
 // import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   // const goTo = useNavigate();
-
   return (
     <section
-      className="h-screen hero-sec bg-cover bg-center bg-no-repeat bg-fixed p-[100px_0] relative"
+      className="h-screen hero-sec bg-cover bg-center bg-no-repeat bg-fixed p-[100px_0] relative overflow-x-hidden"
       style={{ backgroundImage: "url(/hero/bgHero.webp)" }}
     >
       <div className="absolute inset-0 bg-(--nav-bg)/75 flex flex-col justify-center items-center text-white text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-bg-hero">
-          Great Shield
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-bg-hero animate-[1s]  translate-all duration-500">
+          <TypeAnimation
+            sequence={[
+              "Great Shield",
+              1000,
+              "Egyptian Joint Stock Company",
+              1000,
+            ]}
+            speed={75}
+            repeat={Infinity}
+          />
         </h1>
-        <p className="text-lg md:text-2xl mb-10">
+        <p className="text-lg md:text-2xl mb-10 animate-[1s_1s]  translate-all duration-500">
           Construction Services with the Highest Quality and Professionalism
         </p>
         <div className="flex justify-center py-2">
@@ -39,6 +49,13 @@ export default function Hero() {
             </svg>
           </button>
         </div>
+        {/* <div className="flex justify-center items-center bg-red-400">
+          <button className="text-white inline-flex justify-center items-center  text-3xl bg-amber-400  w-20 h-20 my-2 transition duration-300 ">
+            <span className=" ">
+              <FaArrowAltCircleDown />
+            </span>
+          </button>
+        </div> */}
       </div>
     </section>
   );

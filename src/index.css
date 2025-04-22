@@ -24,11 +24,11 @@ html {
       transform: scale(1);
     }
   }
-  /* Animate bounceX */
   @theme {
+    /* Animate bounceX */
     --animate-bounceX: bounceX 1s ease-in-out infinite;
     @keyframes bounceX {
-      0%{
+      0% {
         transform: translateX(0);
       }
       50% {
@@ -41,6 +41,7 @@ html {
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
       }
     }
+
   }
 
   /* hide scrollbar */
@@ -52,11 +53,6 @@ html {
     scrollbar-width: none;
   }
 }
-
-
-
-
-
 
 /* Custom Scrollbar Style */
 .custom-scrollbar::-webkit-scrollbar {

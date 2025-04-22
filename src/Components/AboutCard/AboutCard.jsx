@@ -24,7 +24,7 @@ const AboutCard = ({ title, img, link }) => {
           <h5 className="mb-0 text-2xl font-semibold tracking-tight text-white">
             {title}
           </h5>
-          <div className="text-white text-3xl flex justify-center z-50 my-2 transition duration-300  group-hover:text-white group-hover:animate-bounceX group-hover:opacity-100">
+          <div className="text-white text-3xl flex justify-center z-50 my-2 transition duration-300   group-hover:animate-bounceX group-hover:opacity-100">
             <FaArrowAltCircleRight />
           </div>
         </div>

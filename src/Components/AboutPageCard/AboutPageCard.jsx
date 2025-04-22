@@ -10,7 +10,6 @@ export default function AboutPageCard({
   moreContent,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
   const [showModalClass, setShowModalClass] = useState(false);
   const modalRef = useRef();
 
