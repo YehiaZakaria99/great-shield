@@ -1,18 +1,27 @@
 // import useNavigateToTop from "../Hooks/useNavigateToTop";
+import Aos from "aos";
+import { useEffect } from "react";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
 // import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
-  // const goTo = useNavigate();
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+    return () => {
+      Aos.refreshHard();
+    };
+  }, []);
+
   return (
-    <section
-      className="h-screen hero-sec bg-cover bg-right  md:bg-top bg-no-repeat bg-fixed p-[100px_0] relative overflow-x-hidden"
-      // style={{ backgroundImage: "url(/hero/bgHeroMobile.webp)" }}
-    >
+    <section className="h-screen hero-sec bg-cover bg-right  md:bg-top bg-no-repeat bg-fixed p-[100px_0] relative overflow-x-hidden">
       <div className="absolute inset-0 bg-(--nav-bg)/75 flex flex-col justify-center items-center text-white text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-bg-hero animate-[1s]  translate-all duration-500">
+        <h1
+          className="text-4xl md:text-6xl font-bold mb-4 text-bg-hero animate-[1s]  translate-all duration-500"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+        >
           <TypeAnimation
             sequence={[
               "Great Shield",
@@ -24,10 +33,20 @@ export default function Hero() {
             repeat={Infinity}
           />
         </h1>
-        <p className="text-lg md:text-2xl mb-10 animate-[1s_1s]  translate-all duration-500">
+        <p
+          className="text-lg md:text-2xl mb-10 animate-[1s_1s]  translate-all duration-500"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-delay={200}
+        >
           Construction Services with the Highest Quality and Professionalism
         </p>
-        <div className="flex justify-center py-2">
+        <div
+          className="flex justify-center py-2"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-delay={400}
+        >
           <button
             // onClick={() => goTo("/about#message-details")}
             className="inline-flex items-center outline-none px-4 py-2 group text-md font-medium border-2 bg-(--nav-bg)  text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition-all duration-300 rounded-lg"
