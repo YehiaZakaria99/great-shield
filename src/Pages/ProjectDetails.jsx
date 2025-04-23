@@ -55,9 +55,49 @@ export default function ProjectDetails() {
                 <h3 className="text-3xl font-bold text-(--main-color) mb-4">
                   {projects[id].title}
                 </h3>
-                <pre className="text-gray-300 whitespace-pre-wrap text-sm leading-relaxed">
-                  {projects[id].fullDescription}
-                </pre>
+                <div className="details text-white py-4">
+                  <p className="mb-2">
+                    <span className="font-bold text-sky-400 capitalize">
+                      owner :
+                    </span>{" "}
+                    {projects[id].owner}
+                  </p>
+                  <p className="mb-2">
+                    <span className="font-bold text-sky-400 capitalize">
+                      consultant :
+                    </span>{" "}
+                    {projects[id].consultant}
+                  </p>
+                  {/* <p className="mb-2">
+                    <span className="font-bold text-sky-400 capitalize">
+                      start date :
+                    </span>{" "}
+                    {projects[id].startDate}
+                  </p>
+                  <p className="mb-2">
+                    <span className="font-bold text-sky-400 capitalize">
+                      end date :
+                    </span>{" "}
+                    {projects[id].endDate}
+                  </p> */}
+                  <p className="mb-2">
+                    <span className="font-bold text-sky-400 capitalize">
+                      project description :
+                    </span>{" "}
+                    {projects[id].fullDescription}
+                  </p>
+                  <p className="mb-2">
+                    <span className="font-bold text-sky-400 capitalize">
+                      scope of work :
+                    </span>
+
+                    <ul className="px-3 list-disc">
+                      {projects[id].scopeOfWork.map((scope) => (
+                        <li>{scope}</li>
+                      ))}
+                    </ul>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -1,11 +1,13 @@
 import { createContext, useEffect, useState } from "react";
-// Construction-Project-of-a-Post-Office-Building-in-Qalyubia
-import img1proj1 from "/projectsPage/Post-Office-Building/01.webp";
-import img2proj1 from "/projectsPage/Post-Office-Building/02.webp";
+// Construction Project of a Post Office Building in Qalyubia
+import img1proj1 from "/projectsPage/proj01/01.webp";
+import img2proj1 from "/projectsPage/proj01/02.webp";
+// 6th of October Dry Port
+import img1proj2 from "/projectsPage/proj02/01.webp";
+import img2proj2 from "/projectsPage/proj02/02.webp";
 // Faculty-of-Computers-and-Artificial-Intelligence-Benha-University
 import img1 from "/projectsPage/FCI/01.jpg";
 import img2 from "/projectsPage/FCI/02.jpg";
-
 
 export let ProjectsContext = createContext();
 
@@ -15,22 +17,58 @@ export default function ProjectsContextProvider({ children }) {
       id: 0,
       title: "Construction Project of a Post Office Building in Qalyubia",
       images: [img1proj1, img2proj1],
-      shortDescription:
-        "Construction of the Faculty of AI and Computer Science at Benha University...",
-      fullDescription: `Owner: Benha University\nConsultant: Engineering Department, Benha University\nStart Date: ...\nContract Value: ...\nProject Description: Construction of AI & CS Faculty (6 floors)\nScope of Work:\n• Structural Works\n• Interior & Exterior Finishes\n• Electromechanical Works\n• Landscaping Works`,
+      owner: "The Military Production Company for Development Projects",
+      consultant: "ECG",
+      startDate: "",
+      endDate: "",
+      // contractValue: "",
+      // projectDescription: "",
+      fullDescription: `Administrative facility covering a total area of 960 square meters`,
+      scopeOfWork: [
+        "Construction works",
+        "Interior and exterior finishing works",
+        "Electromechanical works",
+      ],
     },
     {
       id: 1,
-      title: "AI & Computer Science Building - Benha University",
-      images: [img1, img2],
-      shortDescription:
-        "Construction of the Faculty of AI and Computer Science at Benha University...",
-      fullDescription: `Owner: Benha University\nConsultant: Engineering Department, Benha University\nStart Date: ...\nContract Value: ...\nProject Description: Construction of AI & CS Faculty (6 floors)\nScope of Work:\n• Structural Works\n• Interior & Exterior Finishes\n• Electromechanical Works\n• Landscaping Works`,
+      title: "6th of October Dry Port",
+      images: [img1proj2, img2proj2],
+      owner: "The Military Production Company for Development Projects",
+      consultant: "New Urban Communities Authority",
+      startDate: "",
+      endDate: "",
+      // contractValue: "",
+      // projectDescription: "",
+      fullDescription: `Administrative facility covering a total area of 960 square meters`,
+      scopeOfWork: [
+        "Construction works",
+        "Interior and exterior finishing works",
+        "Electromechanical works",
+      ],
     },
+    // {
+    //   id: 1,
+    //   title: "AI & Computer Science Building - Benha University",
+    //   images: [img1, img2],
+    //   owner: "Benha University",
+    //   consultant: "Engineering Department, Benha University",
+    //   startDate: "",
+    //   endDate: "",
+    //   // contractValue: "",
+    //   projectDescription: "",
+    //   fullDescription: `Construction of AI & CS Faculty (6 floors)`,
+    //   scopeOfWork: [
+    //     "Structural Works",
+    //     "Interior & Exterior Finishes",
+    //     "Electromechanical Works",
+    //     "Landscaping Works",
+    //   ],
+    // },
   ];
   return (
     <>
-      <ProjectsContext.Provider value={{projects}}>
+      <ProjectsContext.Provider value={{ projects }}>
         {children}
       </ProjectsContext.Provider>
     </>

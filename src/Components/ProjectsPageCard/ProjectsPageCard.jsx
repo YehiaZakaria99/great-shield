@@ -10,18 +10,18 @@ export default function ProjectsPageCard({ project }) {
 
   return (
     <>
-      <div className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-700/30 transition-shadow">
+      <div className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-700/30 transition-shadow group duration-300">
         <img
           src={project.images[0]}
           alt={project.title}
-          className="h-44 w-full object-cover"
+          className="h-48 w-full object-cover scale-110 group-hover:scale-100 duration-300"
         />
         <div className="p-4">
           <h3 className="text-2xl font-semibold text-(--main-color) mb-2">
-            {project.title}
+            {project.title.split(" ",3).join(" ")}...
           </h3>
           <p className="text-gray-300 line-clamp-3">
-            {project.shortDescription}
+            {project.fullDescription.split(" ",3).join(" ")}...
           </p>
           <button
             onClick={() => navigate(`/projectDetails/${project.id}`)}
