@@ -11,10 +11,10 @@ const AboutCard = ({ title, img, link }) => {
 
   return (
     <HashLink smooth to={link} scroll={(el) => scrollWithOffset(el)}>
-      <div className="bg-[#222] group border border-(--main-color) rounded-lg shadow-md h-full flex flex-col px-4 py-4">
+      <div className="bg-[#222] group border border-(--main-color) rounded-lg shadow-md h-full flex flex-col px-4 py-4 transition-transform hover:scale-[1.03] duration-300">
         <div className="img-box">
           <img
-            className="rounded-lg w-full h-52 object-cover"
+            className="rounded-lg w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
             src={img}
             alt={title}
             loading="lazy"
@@ -24,7 +24,7 @@ const AboutCard = ({ title, img, link }) => {
           <h5 className="mb-0 text-2xl font-semibold tracking-tight text-white">
             {title}
           </h5>
-          <div className="text-white text-3xl flex justify-center z-50 my-2 transition duration-300   group-hover:animate-bounceX group-hover:opacity-100">
+          <div className="text-white text-3xl flex justify-center z-50 my-2 transition duration-300  group-hover:animate-bounceX group-hover:opacity-100">
             <FaArrowAltCircleRight />
           </div>
         </div>

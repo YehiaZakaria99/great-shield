@@ -6,7 +6,7 @@ const ServiceCard = ({ img, title }) => {
           <img
             src={img}
             alt={title}
-            className="w-full h-[90px] md:h-[120px] object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-[90px] md:h-[120px] object-cover rounded-xl group-hover:scale-110 transition-transform duration-300"
           />
         </div>
       </div>

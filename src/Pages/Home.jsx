@@ -1,22 +1,11 @@
-// import Contact from "../sections/Contact";
-// import Projects from "./../Sections/Projects";
 import Hero from "../Sections/Hero";
-import Projects from "../Sections/Projects";
-import About from "./../Sections/About";
 import Services from "./../Sections/Services";
+import About from "./../Sections/About";
+import Projects from "../Sections/Projects";
 // AOS Animation
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 const Home = () => {
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 800,
-  //     once: true,
-  //     easing: "ease-in-out",
-  //   });
-  // }, []);
   return (
     <>
       <Hero />
