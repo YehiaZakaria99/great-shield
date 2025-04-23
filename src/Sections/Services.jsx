@@ -1,4 +1,7 @@
-// import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import ServiceCard from "../Components/ServiceCard/ServiceCard";
 import useNavigateToTop from "../Hooks/useNavigateToTop";
 
@@ -37,31 +40,49 @@ const services = [
 
 const Services = () => {
   const goTo = useNavigateToTop();
-  return (
-    <section
-      id="services"
-      className="py-10 bg-gradient-to-b bg-(--nav-bg) overflow-auto"
-    >
-      <div className="container">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2
-            className="text-4xl font-bold mb-12 text-white text-bg"
-            data-aos="fade-up"
-          >
-            Our Serviecs
-          </h2>
 
-          {/* <div className="grid-special grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 px-2"> */}
-          <div className="flex flex-wrap justify-center md:gap-4 gap-5 my-5 ">
-            {services.map(({ title, description, img }, index) => (
-              <ServiceCard key={index} title={title} img={img} />
-            ))}
-          </div>
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  
+    return () => {
+      AOS.refreshHard(); // أو AOS.refresh() حسب الحاجة
+    };
+  }, []);
+
+  return (
+    <section id="services" className="py-16 bg-(--nav-bg) text-white">
+      <div className="container max-w-7xl mx-auto px-4">
+        <div
+          className="text-center mb-12"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+        >
+          <h2 className="text-4xl font-bold text-(--main-color)">
+            Our Services
+          </h2>
         </div>
-        <div className="flex justify-center my-10  py-5">
+
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-5">
+          {services.map(({ title, img }, index) => (
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+              data-aos-delay={index * 200}
+            >
+              <ServiceCard key={index} title={title} img={img} />
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="flex justify-center mt-12"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+        >
           <button
             onClick={() => goTo("/services")}
-            className="inline-flex items-center group outline-none px-4 py-2 text-sm font-medium border-2 border-(--main-color)  text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition-all duration-300 rounded-lg"
+            className="inline-flex items-center group px-5 py-3 border-2 border-(--main-color) text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition duration-300 rounded-lg"
           >
             More Details
             <svg

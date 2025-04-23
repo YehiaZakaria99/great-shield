@@ -1,14 +1,8 @@
+import Aos from "aos";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 
-export default function AboutPageCard({
-  id,
-  title,
-  text,
-  img,
-  aos = "fade-up",
-  moreContent,
-}) {
+export default function AboutPageCard({ id, title, text, img, moreContent }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showModalClass, setShowModalClass] = useState(false);
   const modalRef = useRef();
@@ -20,10 +14,8 @@ export default function AboutPageCard({
 
   const closeModal = () => {
     setShowModalClass(false);
-    // setIsClosing(true);
     setTimeout(() => {
       setIsModalOpen(false);
-      // setIsClosing(false);
     }, 300);
   };
 
@@ -51,13 +43,15 @@ export default function AboutPageCard({
     };
   }, [isModalOpen, handleClickOutside, handleEscape]);
 
+
   return (
     <div
-      data-aos={aos}
+      data-aos='fade-up'
+      data-aos-easing="ease-in-out"
       className="mb-24 flex flex-col gap-8 items-center text-white"
       id={id}
     >
-      {/* المحتوى العادي */}
+      {/* Content */}
       <div className="flex flex-col md:flex-row items-center gap-8 w-full">
         <div className="w-full md:w-1/2 max-w-md">
           <img
@@ -73,7 +67,7 @@ export default function AboutPageCard({
 
           {moreContent && (
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               className="mt-6 gap-2 inline-flex items-center group outline-none px-3 py-2 text-sm font-medium border-2 border-(--main-color)  text-(--main-color) hover:bg-(--main-color) hover:text-(--nav-bg) transition-all duration-300 rounded-lg"
             >
               View More
@@ -82,7 +76,7 @@ export default function AboutPageCard({
           )}
         </div>
       </div>
-
+      {/* Modal */}
       {isModalOpen && (
         <div
           className={`fixed inset-0 z-50 bg-[rgba(0_0_0_.15)] backdrop-blur-sm flex items-center justify-center px-4 py-2 md:py-6 overflow-y-auto transition-all duration-300 ${
@@ -95,9 +89,10 @@ export default function AboutPageCard({
               showModalClass ? "scale-100 opacity-100" : "scale-95 opacity-0"
             } max-h-[90vh] overflow-y-auto`}
           >
+            {/* close modal */}
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition"
-              onClick={closeModal}
+              onClick={() => closeModal()}
             >
               <FaTimes size={20} />
             </button>

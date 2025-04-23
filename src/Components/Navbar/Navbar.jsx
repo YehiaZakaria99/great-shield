@@ -2,6 +2,7 @@ import logo from "/navbar/logo.svg";
 import { useEffect, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center p-1">
         {/* Logo */}
         <div className="font-bold">
-          <img className="w-40" src={logo} alt="logo" />
+          <Link to={'/'}><img className="w-40" src={logo} alt="logo" /></Link>
         </div>
 
         {/* Desktop Links */}
