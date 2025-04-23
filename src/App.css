@@ -47,18 +47,23 @@ button {
   cursor: pointer;
 }
 
-
 .width-special {
-  @media (width <= 31.25rem ) {
-      width: 160px; 
+  @media (width <= 31.25rem) {
+    width: 160px;
   }
 }
 
 .container {
-  @media (width <= 576px ) {
-      width: 100%; 
+  @media (width <= 576px) {
+    width: 100%;
   }
 }
 
-
-
+.hero-sec {
+  @media (width <= 576px) {
+    background-image: url(/hero/bgHeroMobile.webp);
+  }
+  @media (width > 576px) {
+    background-image: url(/hero/bgHero.webp);
+  }
+}
