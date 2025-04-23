@@ -1,11 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import { FaTimes } from "react-icons/fa";
+import { useContext, useEffect } from "react";
 import ProjectsPageCard from "../Components/ProjectsPageCard/ProjectsPageCard";
-import ProjectsPageModal from "../Components/ProjectsPageModal/ProjectsPageModal";
 import { ProjectsContext } from "../Context/ProjectsContext";
 import Aos from "aos";
 
