@@ -46,7 +46,7 @@ const About = () => {
             <div key={index} className=" rounded-2xl w-full md:w-1/2 lg:w-1/4">
               <div
                 className="px-3 h-full"
-                data-aos="flip-down"
+                data-aos="zoom-out"
                 data-aos-delay={index * 200}
                 data-aos-easing="ease-in-out"
               >
