@@ -22,9 +22,18 @@ import projectManagement from "/servicesPage/More Services/projectManagement.web
 import engineeringDesign from "/servicesPage/More Services/engineeringDesign.webp";
 import procurement from "/servicesPage/More Services/procurement.webp";
 import maintenance from "/servicesPage/More Services/maintenance.webp";
+import Aos from "aos";
 
 export default function ServicesPage() {
   const [isLoading, setIsLodaing] = useState(true);
+
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+
+    return () => {
+      Aos.refreshHard();
+    };
+  }, []);
 
   useEffect(() => {
     let x = 1;
@@ -176,9 +185,15 @@ export default function ServicesPage() {
       {isLoading ? (
         <Loading />
       ) : (
-        <section className="pt-40 pb-16 bg-[#111] text-white min-h-screen overflow-hidden">
+        <section
+          className="pt-40 pb-16 bg-[#111] text-white min-h-screen overflow-hidden"
+        >
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-(--main-color) mb-16">
+            <h2
+              className="text-4xl md:text-5xl font-bold text-center text-(--main-color) mb-16"
+              data-aos="fade-right"
+              data-aos-easing="ease-in-out"
+            >
               Services
             </h2>
 

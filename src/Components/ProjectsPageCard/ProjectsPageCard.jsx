@@ -3,9 +3,7 @@ import ProjectsPageModal from "../ProjectsPageModal/ProjectsPageModal";
 import ProjectDetails from "../../Pages/ProjectDetails";
 import { useNavigate } from "react-router-dom";
 
-export default function ProjectsPageCard({ project }) {
-
-
+export default function ProjectsPageCard({ project, index }) {
   const navigate = useNavigate();
 
   return (
@@ -18,13 +16,16 @@ export default function ProjectsPageCard({ project }) {
         />
         <div className="p-4">
           <h3 className="text-2xl font-semibold text-(--main-color) mb-2">
-            {project.title.split(" ",3).join(" ")}...
+            {project.title.split(" ", 3).join(" ")}...
           </h3>
           <p className="text-gray-300 line-clamp-3">
-            {project.fullDescription.split(" ",3).join(" ")}...
+            {project.fullDescription.split(" ", 3).join(" ")}...
           </p>
           <button
-            onClick={() => navigate(`/projectDetails/${project.id}`)}
+            onClick={() => {
+              sessionStorage.setItem("lastViewedProject", index);
+              navigate(`/projectDetails/${project.id}`);
+            }}
             className="mt-4 inline-block px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-md"
           >
             View Details

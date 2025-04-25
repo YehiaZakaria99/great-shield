@@ -19,10 +19,18 @@ export default function ProjectsPage() {
     >
       <div className="container">
         <div className="">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-(--main-color) mb-2">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-center text-(--main-color) mb-2"
+            data-aos="fade-right"
+            data-aos-easing="ease-in-out"
+          >
             Projects
           </h2>
-          <p className="text-center text-cyan-400 text-xl mb-10">
+          <p
+            className="text-gray-300 text-center max-w-3xl mx-auto text-lg leading-relaxed mb-12"
+            data-aos="fade-left"
+            data-aos-easing="ease-in-out"
+          >
             Featured Construction Projects
           </p>
 
@@ -34,7 +42,7 @@ export default function ProjectsPage() {
                 data-aos-delay={index * 200}
                 data-aos-easing="ease-in-out"
               >
-                <ProjectsPageCard project={project} />
+                <ProjectsPageCard index={index} project={project} />
               </div>
             ))}
           </div>

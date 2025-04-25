@@ -11,8 +11,7 @@
 }
 
 /* Gradiant Text */
-.text-bg,
-.text-bg-hero {
+.text-bg{
   background: linear-gradient(
     270deg,
     var(--main-color) 0%,

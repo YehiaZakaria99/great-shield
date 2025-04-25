@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const settings = {
   dots: true,
@@ -86,17 +87,16 @@ export default function ProjectDetails() {
                     </span>{" "}
                     {projects[id].fullDescription}
                   </p>
-                  <p className="mb-2">
+                  <div className="mb-2">
                     <span className="font-bold text-sky-400 capitalize">
                       scope of work :
                     </span>
-
                     <ul className="px-3 list-disc">
-                      {projects[id].scopeOfWork.map((scope) => (
-                        <li>{scope}</li>
+                      {projects[id].scopeOfWork.map((scope, i) => (
+                        <li key={i}>{scope}</li>
                       ))}
                     </ul>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -108,8 +108,14 @@ export default function ProjectDetails() {
               to="/projects"
               className="inline-block bg-(--main-color) hover:bg-orange-500 text-white font-semibold px-6 py-2 rounded-lg transition duration-300 shadow-md"
             >
-              Back
+              Back To Projects
             </Link>
+            <HashLink
+              smooth to="/#projects"
+              className="ms-5 inline-block bg-(--main-color) hover:bg-orange-500 text-white font-semibold px-6 py-2 rounded-lg transition duration-300 shadow-md"
+            >
+              Back To Home
+            </HashLink>
           </div>
         </section>
       </div>

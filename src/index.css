@@ -42,7 +42,6 @@ html {
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
       }
     }
-
   }
 
   /* hide scrollbar */
@@ -56,17 +55,33 @@ html {
 }
 
 /* Custom Scrollbar Style */
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+.custom-scrollbar {
+  scrollbar-width: 30px;
+  scrollbar-color: var(--main-color) #222;
+  overflow-x: hidden;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 0;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+  background: #f1f5f9;
+  border-radius: 8px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #94a3b8; /* slate-400 */
+  background: #38bdf8;
   border-radius: 10px;
+  border: 2px solid #f1f5f9;
+  transition: .5s;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #64748b; /* slate-500 */
+  background: #0ea5e9;
 }

@@ -43,7 +43,7 @@ const Services = () => {
 
   useEffect(() => {
     AOS.init({ duration: 800 });
-  
+
     return () => {
       AOS.refreshHard(); // أو AOS.refresh() حسب الحاجة
     };
@@ -57,9 +57,7 @@ const Services = () => {
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
         >
-          <h2 className="text-4xl font-bold text-(--main-color)">
-            Our Services
-          </h2>
+          <h2 className="text-4xl font-bold text-bg">Our Services</h2>
         </div>
 
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-5">

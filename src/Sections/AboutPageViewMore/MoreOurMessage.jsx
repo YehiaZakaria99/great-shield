@@ -76,11 +76,11 @@ With sincere appreciation,`,
   };
 
   return (
-    <div className="bg-[#222] w-full max-w-5xl rounded-xl p-4 sm:p-6 md:p-8 relative shadow-2xl">
+    <div className="w-full">
       <Slider {...settings}>
         {messages.map((msg, index) => (
           <div key={index} className="px-2 py-4">
-            <div className="flex flex-col md:flex-row items-center gap-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-xl p-4 md:p-8">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-md p-6 md:p-8">
               <img
                 src={msg.img}
                 alt={msg.title}
@@ -90,8 +90,8 @@ With sincere appreciation,`,
                 <h5 className="text-2xl font-bold text-gray-800 mb-3">
                   {msg.title}
                 </h5>
-                <p className="text-gray-600 text-sm md:text-base leading-7 whitespace-pre-line overflow-auto h-44 md:h-52 custom-scrollbar pr-2">
-                  <span className="inline-block">{msg.text}</span>
+                <p className="text-gray-600 text-sm md:text-base leading-7 whitespace-pre-line max-h-52 overflow-y-auto custom-scrollbar pr-2">
+                  {msg.text}
                 </p>
                 <div className="mt-4">
                   <p className="text-sm text-gray-500 italic">{msg.name}</p>

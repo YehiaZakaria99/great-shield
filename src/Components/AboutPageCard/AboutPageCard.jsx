@@ -43,10 +43,9 @@ export default function AboutPageCard({ id, title, text, img, moreContent }) {
     };
   }, [isModalOpen, handleClickOutside, handleEscape]);
 
-
   return (
     <div
-      data-aos='fade-up'
+      data-aos="fade-up"
       data-aos-easing="ease-in-out"
       className="mb-24 flex flex-col gap-8 items-center text-white"
       id={id}
@@ -79,26 +78,31 @@ export default function AboutPageCard({ id, title, text, img, moreContent }) {
       {/* Modal */}
       {isModalOpen && (
         <div
-          className={`fixed inset-0 z-50 bg-[rgba(0_0_0_.15)] backdrop-blur-sm flex items-center justify-center px-4 py-2 md:py-6 overflow-y-auto transition-all duration-300 ${
-            showModalClass ? "opacity-100" : "opacity-0"
+          className={`fixed inset-0 z-50 bg-[rgba(0_0_0_/_0.2)] backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300 ${
+            showModalClass ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
           <div
             ref={modalRef}
-            className={`bg-[#222] w-full max-w-5xl rounded-2xl p-4 sm:p-6 md:p-10 shadow-2xl transform transition-all duration-300 ${
+            className={`relative bg-[#222] w-full max-w-6xl rounded-2xl p-4 sm:p-6 md:p-10 shadow-2xl transform transition-all duration-300 ${
               showModalClass ? "scale-100 opacity-100" : "scale-95 opacity-0"
-            } max-h-[90vh] overflow-y-auto`}
+            } max-h-[95vh] overflow-y-auto custom-scrollbar flex flex-col`}
           >
-            {/* close modal */}
+            {/* زر الإغلاق */}
             <button
-              className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition"
-              onClick={() => closeModal()}
+              className="absolute top-6 right-6 text-gray-400 hover:text-red-500 transition z-10"
+              onClick={closeModal}
             >
-              <FaTimes size={20} />
+              <FaTimes size={28} /> {/* كبرنا حجم الـ X شوية */}
             </button>
 
-            <h4 className="text-2xl font-bold text-orange-400 mb-6">{title}</h4>
-            <div>{moreContent}</div>
+            {/* عنوان المودال */}
+            <h4 className="text-3xl font-bold text-orange-400 mb-8 text-center">
+              {title}
+            </h4>
+
+            {/* محتوى المودال */}
+            <div className="flex-1">{moreContent}</div>
           </div>
         </div>
       )}
