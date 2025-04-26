@@ -1,0 +1,1 @@
+const s="/great-shield/aboutSec/Our-Vision.webp",e="/great-shield/aboutSec/Our-Message.webp",a="/great-shield/aboutSec/Our-Mission.webp",o="/great-shield/aboutSec/Our-Standards.webp";export{a,o as b,e as c,s as o};
