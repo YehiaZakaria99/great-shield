@@ -88,20 +88,20 @@ export default function AboutPageCard({ id, title, text, img, moreContent }) {
               showModalClass ? "scale-100 opacity-100" : "scale-95 opacity-0"
             } max-h-[95vh] overflow-y-auto custom-scrollbar flex flex-col`}
           >
-            {/* زر الإغلاق */}
+           
             <button
               className="absolute top-6 right-6 text-gray-400 hover:text-red-500 transition z-10"
               onClick={closeModal}
             >
-              <FaTimes size={28} /> {/* كبرنا حجم الـ X شوية */}
+              <FaTimes size={28} /> 
             </button>
 
-            {/* عنوان المودال */}
+            
             <h4 className="text-3xl font-bold text-orange-400 mb-8 text-center">
               {title}
             </h4>
 
-            {/* محتوى المودال */}
+
             <div className="flex-1">{moreContent}</div>
           </div>
         </div>

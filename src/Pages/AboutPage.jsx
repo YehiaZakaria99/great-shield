@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import AboutPageCard from "../Components/AboutPageCard/AboutPageCard";
+import AboutPageCard from "../Components/AboutPageCard/AboutPageCard.jsx";
+import Loading from "../Components/Loading/Loading.jsx";
+import MoreOurMessage from "./../Sections/AboutPageViewMore/MoreOurMessage.jsx";
+import AboutOverview from "./../Sections/AboutOverview.jsx";
 
 // imgs
 import ourVision from "/aboutSec/Our-Vision.webp";
 import ourMessage from "/aboutSec/Our-Message.webp";
 import ourMissoin from "/aboutSec/Our-Mission.webp";
 import ourStandards from "/aboutSec/Our-Standards.webp";
-import Loading from "../Components/Loading/Loading";
-import MoreOurMessage from "./../Sections/AboutPageViewMore/MoreOurMessage";
-import AboutOverview from "./../Sections/AboutOverview";
 import Aos from "aos";
 
 export default function AboutPage() {

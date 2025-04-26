@@ -1,7 +1,7 @@
 // Animation
 import { useEffect, useState } from "react";
-import ServicesPageCard from "../Components/ServicesPageCard/ServicesPageCard";
-import Loading from "./../Components/Loading/Loading";
+import ServicesPageCard from "../Components/ServicesPageCard/ServicesPageCard.jsx";
+import Loading from "./../Components/Loading/Loading.jsx";
 
 // General Construction Services
 import residentialBuilding from "/servicesPage/General-Construction-Services/residentialBuilding.webp";

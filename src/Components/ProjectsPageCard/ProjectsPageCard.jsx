@@ -13,6 +13,7 @@ export default function ProjectsPageCard({ project, index }) {
           src={project.images[0]}
           alt={project.title}
           className="h-48 w-full object-cover scale-110 group-hover:scale-100 duration-300"
+          loading="lazy"
         />
         <div className="p-4">
           <h3 className="text-2xl font-semibold text-(--main-color) mb-2">

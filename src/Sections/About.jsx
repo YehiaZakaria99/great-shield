@@ -1,4 +1,4 @@
-import AboutCard from "../Components/AboutCard/AboutCard";
+import AboutCard from "../Components/AboutCard/AboutCard.jsx";
 
 // Images
 import ourVision from "/aboutSec/Our-Vision.webp";
@@ -29,7 +29,7 @@ const About = () => {
     };
   }, []);
   return (
-    <section id="about" className="pb-20 bg-(--nav-bg)">
+    <section id="about" className="pb-20 bg-(--nav-bg) overflow-x-hidden">
       <div className="container max-w-7xl  px-4">
         <div className="mb-12" data-aos="fade-up" data-aos-easing="ease-in-out">
           <h2 className="text-4xl font-bold mb-6 text-bg">About Us</h2>

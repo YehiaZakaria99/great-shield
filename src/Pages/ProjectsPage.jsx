@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
-import ProjectsPageCard from "../Components/ProjectsPageCard/ProjectsPageCard";
-import { ProjectsContext } from "../Context/ProjectsContext";
+import ProjectsPageCard from "../Components/ProjectsPageCard/ProjectsPageCard.jsx";
+import { ProjectsContext } from "../Context/ProjectsContext.jsx";
 import Aos from "aos";
 
 export default function ProjectsPage() {

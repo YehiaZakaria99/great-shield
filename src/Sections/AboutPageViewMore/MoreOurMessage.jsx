@@ -85,6 +85,7 @@ With sincere appreciation,`,
                 src={msg.img}
                 alt={msg.title}
                 className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-sky-200 shadow-md"
+                loading="lazy"
               />
               <div className="text-center md:text-left w-full">
                 <h5 className="text-2xl font-bold text-gray-800 mb-3">

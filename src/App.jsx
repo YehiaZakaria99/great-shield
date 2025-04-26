@@ -3,26 +3,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 import { Route } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar.jsx";
 
-// import Home from "./Pages/Home";
-// import ContactPage from "./Pages/ContactPage";
-// import AboutPage from "./Pages/AboutPage";
-// import ServicesPage from "./Pages/ServicesPage";
-// import NotFound from "./Pages/NotFound";
 import { lazy, Suspense } from "react";
 
-const Home = lazy(() => import("./Pages/Home"));
-const ContactPage = lazy(() => import("./Pages/ContactPage"));
-const AboutPage = lazy(() => import("./Pages/AboutPage"));
-const ServicesPage = lazy(() => import("./Pages/ServicesPage"));
-const NotFound = lazy(() => import("./Pages/NotFound"));
+const Home = lazy(() => import("./Pages/Home.jsx"));
+const ContactPage = lazy(() => import("./Pages/ContactPage.jsx"));
+const AboutPage = lazy(() => import("./Pages/AboutPage.jsx"));
+const ServicesPage = lazy(() => import("./Pages/ServicesPage.jsx"));
+const NotFound = lazy(() => import("./Pages/NotFound.jsx"));
 
-import Footer from "./Components/Footer/Footer";
-import Loading from "./Components/Loading/Loading";
-import ProjectsPage from "./Pages/ProjectsPage";
-import ProjectDetails from "./Pages/ProjectDetails";
-import ProjectsContextProvider from "./Context/ProjectsContext";
+import Footer from "./Components/Footer/Footer.jsx";
+import Loading from "./Components/Loading/Loading.jsx";
+import ProjectsPage from "./Pages/ProjectsPage.jsx";
+import ProjectDetails from "./Pages/ProjectDetails.jsx";
+import ProjectsContextProvider from "./Context/ProjectsContext.jsx";
 
 function App() {
   return (

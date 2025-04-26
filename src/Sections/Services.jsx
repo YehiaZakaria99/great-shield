@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import ServiceCard from "../Components/ServiceCard/ServiceCard";
-import useNavigateToTop from "../Hooks/useNavigateToTop";
+import ServiceCard from "../Components/ServiceCard/ServiceCard.jsx";
+import useNavigateToTop from "../Hooks/useNavigateToTop.js";
 
 import buildingConstruction from "/servicesSec/Building-Construction.webp";
 import engineeringDesign from "/servicesSec/Engineering-Design.webp";

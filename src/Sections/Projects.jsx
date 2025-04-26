@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useContext, useRef, useEffect } from "react";
-import { ProjectsContext } from "./../Context/ProjectsContext";
+import { ProjectsContext } from "./../Context/ProjectsContext.jsx";
 import { useNavigate } from "react-router-dom";
 import Aos from "aos";
 

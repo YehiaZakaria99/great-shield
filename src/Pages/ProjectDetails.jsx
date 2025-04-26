@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { ProjectsContext } from "../Context/ProjectsContext";
+import { ProjectsContext } from "../Context/ProjectsContext.jsx";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 // Animation

@@ -1,4 +1,4 @@
-import useNavigateToTop from "../Hooks/useNavigateToTop";
+import useNavigateToTop from "../Hooks/useNavigateToTop.js";
 import Aos from "aos";
 import { useEffect } from "react";
 import { FaArrowAltCircleDown } from "react-icons/fa";
