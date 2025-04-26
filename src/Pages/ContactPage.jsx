@@ -17,12 +17,18 @@ export default function ContactPage() {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    /* 
+    service-id: service_ztevk08
+template-id: template_bvdhiro
+
+public-key: OOlPmBj-KjzyftCSE
+    */
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_ztevk08",
+        "template_bvdhiro",
         form.current,
-        "YOUR_PUBLIC_KEY"
+        "OOlPmBj-KjzyftCSE"
       )
       .then(
         (result) => {
@@ -63,10 +69,11 @@ export default function ContactPage() {
             <iframe
               title="company-location"
               className="w-full h-full rounded-2xl shadow-lg"
-              src="https://www.google.com/maps/embed?pb=!1m18!2m12!1m3!1d27617.395935847887!2d31.235711!3d30.044420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f6b9a624f41%3A0xc46550b74f8231c3!2z2KfZhNmF2Yog2YXYrdmF2K8g2KfZhNiv2YTZhtmK2YbYqSDYp9mE2YXYs9iMINin2YTYt9mK2YbZiiDZiNin2YTZg9ipINin2YTYtNin2YXYsw!5e0!3m2!1sen!2seg!4v1611313210123!5m2!1sen!2seg"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.8856261222636!2d31.423467300000006!3d30.01783870000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d028cb4e5c9%3A0x30387fde5456377b!2sMakateb!5e1!3m2!1sar!2seg!4v1745670977847!5m2!1sar!2seg"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+            {/* <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
           </div>
 
           {/* Form */}
@@ -159,17 +166,18 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Info (Optional Section) */}
-        {/* <div className="mt-16 text-center space-y-4 text-gray-600">
+        <div className="mt-16 text-center space-y-4 text-gray-600">
           <div className="flex justify-center items-center gap-2">
-            <FaLocationArrow /> <span>123 Main Street, Cairo, Egypt</span>
+            <FaLocationArrow />{" "}
+            <span>Banks Center St, New Cairo 1, Cairo Governorate, Egypt</span>
           </div>
           <div className="flex justify-center items-center gap-2">
-            <FaPhoneAlt /> <span>+20 100 123 4567</span>
+            <FaPhoneAlt /> <span>+20 123 456 7890</span>
           </div>
           <div className="flex justify-center items-center gap-2">
-            <FaEnvelope /> <span>info@yourcompany.com</span>
+            <FaEnvelope /> <span>Info@greatshieldegypt.com</span>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
@@ -178,6 +186,7 @@ export default function ContactPage() {
 /* 
 
 service-id: service_ztevk08
-service-id: template_tntqk0s
+template-id: template_bvdhiro
+
 public-key: OOlPmBj-KjzyftCSE
 */
