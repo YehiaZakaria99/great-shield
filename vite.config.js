@@ -7,11 +7,3 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 });
-
-/* 
-module.exports = {
-
-  // خيارات أخرى
-};
-
-*/
